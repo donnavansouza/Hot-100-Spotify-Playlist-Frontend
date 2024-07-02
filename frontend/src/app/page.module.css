@@ -1,41 +1,101 @@
-.homepage{
+.container {
   background-color: black;
   background: linear-gradient(-45deg, black, #0e0d0d, black, black);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 91vh;
-  color:antiquewhite;
-  display: flex;
+  color: antiquewhite;
+  display: grid;
+  grid-template-rows: 2fr 1.5fr 1fr 1fr;
 }
 
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
-.upperText{
-  align-items: center;  
-  width: 100%;
-  justify-content: center;
-  display: block;
-  justify-self: center;
-  justify-items: center;
-  align-self: center;
+.homepage{
+  display: grid;
+  align-items: center;
+  justify-items: center;  
+  grid-template-rows: 1fr 1.5fr 1fr 1fr;
+  margin-top: 100px;
 }
 
-.lowerText{
-  align-items: center;  
+.upperText {
+  align-items: center;
   width: 100%;
   justify-content: center;
-  display: flex;
-  justify-self: center;
+  display: grid;
+  font-size: 4.5rem;
+}
+
+.lowerText {
+  align-items: center;
+  width: 70%;
+  justify-content: center;
+  display: grid;
+  font-size: 1.3rem;
   justify-items: center;
-  align-self: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.homepage select {
+  background-color: #000;
+  color: #fff;
+  border-width: 8px;
+  border-color: #000;
+  outline: ridge 1px #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "circular_black";
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 1.5625rem;
+  display: inline-block;
+  padding: 1rem 3rem .875rem;
+  min-height: 3rem;
+  white-space: nowrap;
+  transition: background-color .3s, opacity .3s;
+  width: 14rem;
+}
+
+.homepage button{
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-family: "circular_black";
+  font-weight: bold;
+  font-size: .825rem;
+  user-select: none;
+  border-radius: 1.5625rem;
+  display: inline-block;
+  padding: 1rem 3rem .875rem;
+  min-height: 3rem;
+  white-space: nowrap;
+  transition: background-color .3s,opacity .3s;
+  cursor:pointer;
+  outline: ridge 1px #fff;
+}
+
+.options{
+  display: flex;
+  gap: 10px;
 }

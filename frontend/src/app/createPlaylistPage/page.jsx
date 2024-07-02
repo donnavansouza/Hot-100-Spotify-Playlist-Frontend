@@ -4,14 +4,25 @@ import React from 'react';
 import { redirect } from 'next/navigation';
 import { CircularProgress } from '@mui/material';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 
 
 export default async function PlaylistPage() {
+
+    const searchParams = useSearchParams();
+
+
+
+    const date = searchParams.get('date').split('.')
+    const year = date[0]
+    const month = date[1]
+    const day = date[2]
+
     let aux = 0;
     async function fetchPlaylistId() {
         try {
-            const response = await fetch('http://localhost:8000/createPlaylist/%7Byear:month:day%7D?year=2010&month=08&day=29', { method: 'GET' });
+            const response = await fetch(`http://localhost:8000/createPlaylist/%7Byear:month:day%7D?year=${year}&month=${month}&day=${day}`, { method: 'GET' });
             const data = await response.json();
             aux = 1;
             console.log('Playlist data:', data);
