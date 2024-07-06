@@ -13,12 +13,19 @@ function Homepage() {
 
   const years = [];
   for (let i = currentYear; i >= 1958; i--) {
-    years.push(<option value={i}>{i}</option>);
+    years.push(<option key={i} value={i}>{i}</option>);
   }
 
   const months = [];
   for (let i = 1; i <= 12; i++) {
+    i<10 ? i = '0'+i:i
     months.push(<option key={i} value={i}>{i}</option>);
+  }
+
+  const days = [];
+  for (let i = 1; i <= 31; i++) {
+    i<10 ? i = '0'+i:i
+    days.push(<option key={i} value={i}>{i}</option>);
   }
 
   const [year, setYear] = useState('')
@@ -60,7 +67,7 @@ function Homepage() {
         </select>
         <select id='day' onChange={selectDay}>
           <option value="">Day</option>
-          {months}
+          {days}
         </select>
         </div>
         <button onClick={() => {
